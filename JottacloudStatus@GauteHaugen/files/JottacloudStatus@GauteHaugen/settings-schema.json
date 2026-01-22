@@ -1,0 +1,10 @@
+{
+   "jottacloud-config": {
+      "type": "header",
+      "description": "Jottacloud Config"
+   },
+   "jottacloud-config-download-rate": {
+      "type": "entry",
+      "description": "Testing"
+   }
+}

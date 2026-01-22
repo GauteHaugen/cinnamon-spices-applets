@@ -1,0 +1,332 @@
+{
+  "layout": {
+    "type": "layout",
+    "pages": ["general", "sync", "backup", "advanced"],
+    "general": {
+      "type": "page",
+      "title": "General",
+      "sections": ["general-section", "appearance-section", "notifications-section"]
+    },
+    "sync": {
+      "type": "page",
+      "title": "Sync",
+      "sections": ["sync-section"]
+    },
+    "backup": {
+      "type": "page",
+      "title": "Backup",
+      "sections": ["backup-section"]
+    },
+    "advanced": {
+      "type": "page",
+      "title": "Advanced",
+      "sections": ["advanced-section", "troubleshooting-section"]
+    },
+
+    "general-section": {
+      "type": "section",
+      "title": "General Settings",
+      "keys": ["update-interval", "start-on-login", "show-notifications"]
+    },
+    "appearance-section": {
+      "type": "section",
+      "title": "Appearance",
+      "keys": ["show-label", "show-icon", "label-format", "icon-style"]
+    },
+    "notifications-section": {
+      "type": "section",
+      "title": "Notifications",
+      "keys": ["notify-sync-complete", "notify-backup-complete", "notify-errors", "notify-quota-warning"]
+    },
+
+    "sync-section": {
+      "type": "section",
+      "title": "Sync Settings",
+      "keys": ["sync-folder", "auto-sync", "sync-interval", "exclude-patterns", "ignore-symlinks"]
+    },
+
+    "backup-section": {
+      "type": "section",
+      "title": "Backup Settings",
+      "keys": ["backup-folders", "backup-schedule", "exclude-extensions", "max-file-size", "follow-symlinks"]
+    },
+
+    "advanced-section": {
+      "type": "section",
+      "title": "Advanced Settings",
+      "keys": ["cli-path", "log-level", "max-upload-speed", "max-download-speed", "parallel-uploads", "parallel-downloads"]
+    },
+    "troubleshooting-section": {
+      "type": "section",
+      "title": "Troubleshooting",
+      "keys": ["enable-debug", "log-to-file", "reset-settings"]
+    }
+  },
+
+  "update-interval": {
+    "type": "spinbutton",
+    "default": 10,
+    "min": 5,
+    "max": 300,
+    "step": 5,
+    "units": "seconds",
+    "description": "Status update interval",
+    "tooltip": "How often to check Jottacloud status (in seconds)"
+  },
+
+  "start-on-login": {
+    "type": "switch",
+    "default": true,
+    "description": "Start Jottacloud on login",
+    "tooltip": "Automatically start Jottacloud daemon when you log in"
+  },
+
+  "show-notifications": {
+    "type": "switch",
+    "default": true,
+    "description": "Show notifications",
+    "tooltip": "Display system notifications for Jottacloud events"
+  },
+
+  "show-label": {
+    "type": "switch",
+    "default": true,
+    "description": "Show label in panel",
+    "tooltip": "Display status text next to the icon"
+  },
+
+  "show-icon": {
+    "type": "switch",
+    "default": true,
+    "description": "Show icon in panel",
+    "tooltip": "Display the Jottacloud icon"
+  },
+
+  "label-format": {
+    "type": "combobox",
+    "default": "status",
+    "options": {
+      "status": "Status only",
+      "speed": "Transfer speed",
+      "usage": "Storage usage",
+      "custom": "Custom format"
+    },
+    "description": "Label format",
+    "tooltip": "What information to show in the panel label"
+  },
+
+  "icon-style": {
+    "type": "combobox",
+    "default": "symbolic",
+    "options": {
+      "symbolic": "Symbolic",
+      "colored": "Colored",
+      "dynamic": "Dynamic (based on status)"
+    },
+    "description": "Icon style",
+    "tooltip": "Visual style for the panel icon"
+  },
+
+  "notify-sync-complete": {
+    "type": "switch",
+    "default": false,
+    "description": "Notify when sync completes",
+    "tooltip": "Show a notification when synchronization finishes"
+  },
+
+  "notify-backup-complete": {
+    "type": "switch",
+    "default": true,
+    "description": "Notify when backup completes",
+    "tooltip": "Show a notification when backup finishes"
+  },
+
+  "notify-errors": {
+    "type": "switch",
+    "default": true,
+    "description": "Notify on errors",
+    "tooltip": "Show notifications for errors and warnings"
+  },
+
+  "notify-quota-warning": {
+    "type": "switch",
+    "default": true,
+    "description": "Notify when approaching quota",
+    "tooltip": "Warn when storage usage exceeds 90%"
+  },
+
+  "sync-folder": {
+    "type": "filechooser",
+    "default": "",
+    "select-dir": true,
+    "description": "Sync folder location",
+    "tooltip": "Local folder to sync with Jottacloud"
+  },
+
+  "auto-sync": {
+    "type": "switch",
+    "default": true,
+    "description": "Automatic sync",
+    "tooltip": "Automatically sync changes"
+  },
+
+  "sync-interval": {
+    "type": "spinbutton",
+    "default": 300,
+    "min": 60,
+    "max": 3600,
+    "step": 60,
+    "units": "seconds",
+    "description": "Sync check interval",
+    "tooltip": "How often to check for changes to sync"
+  },
+
+  "exclude-patterns": {
+    "type": "entry",
+    "default": "*.tmp,*.cache,~*",
+    "description": "Exclude patterns",
+    "tooltip": "File patterns to exclude from sync (comma-separated)"
+  },
+
+  "ignore-symlinks": {
+    "type": "switch",
+    "default": false,
+    "description": "Ignore symbolic links",
+    "tooltip": "Don't follow symbolic links during sync"
+  },
+
+  "backup-folders": {
+    "type": "list",
+    "columns": [
+      {"id": "path", "title": "Folder Path", "type": "string"}
+    ],
+    "default": [],
+    "description": "Backup folders",
+    "tooltip": "Folders to continuously backup to Jottacloud"
+  },
+
+  "backup-schedule": {
+    "type": "combobox",
+    "default": "continuous",
+    "options": {
+      "continuous": "Continuous",
+      "hourly": "Every hour",
+      "daily": "Daily",
+      "weekly": "Weekly",
+      "manual": "Manual only"
+    },
+    "description": "Backup schedule",
+    "tooltip": "When to run backups"
+  },
+
+  "exclude-extensions": {
+    "type": "entry",
+    "default": ".tmp,.cache,.log",
+    "description": "Exclude file extensions",
+    "tooltip": "File extensions to exclude from backup (comma-separated)"
+  },
+
+  "max-file-size": {
+    "type": "spinbutton",
+    "default": 5120,
+    "min": 0,
+    "max": 102400,
+    "step": 1024,
+    "units": "MB",
+    "description": "Maximum file size",
+    "tooltip": "Skip files larger than this size (0 = no limit)"
+  },
+
+  "follow-symlinks": {
+    "type": "switch",
+    "default": false,
+    "description": "Follow symbolic links",
+    "tooltip": "Follow symbolic links during backup"
+  },
+
+  "cli-path": {
+    "type": "entry",
+    "default": "jotta-cli",
+    "description": "CLI executable path",
+    "tooltip": "Path to jotta-cli executable"
+  },
+
+  "log-level": {
+    "type": "combobox",
+    "default": "info",
+    "options": {
+      "error": "Error",
+      "warning": "Warning",
+      "info": "Info",
+      "debug": "Debug",
+      "trace": "Trace"
+    },
+    "description": "Log level",
+    "tooltip": "Verbosity of logging"
+  },
+
+  "max-upload-speed": {
+    "type": "spinbutton",
+    "default": 0,
+    "min": 0,
+    "max": 102400,
+    "step": 1024,
+    "units": "KB/s",
+    "description": "Max upload speed",
+    "tooltip": "Maximum upload bandwidth (0 = unlimited)"
+  },
+
+  "max-download-speed": {
+    "type": "spinbutton",
+    "default": 0,
+    "min": 0,
+    "max": 102400,
+    "step": 1024,
+    "units": "KB/s",
+    "description": "Max download speed",
+    "tooltip": "Maximum download bandwidth (0 = unlimited)"
+  },
+
+  "parallel-uploads": {
+    "type": "spinbutton",
+    "default": 4,
+    "min": 1,
+    "max": 10,
+    "step": 1,
+    "units": "files",
+    "description": "Parallel uploads",
+    "tooltip": "Number of files to upload simultaneously"
+  },
+
+  "parallel-downloads": {
+    "type": "spinbutton",
+    "default": 4,
+    "min": 1,
+    "max": 10,
+    "step": 1,
+    "units": "files",
+    "description": "Parallel downloads",
+    "tooltip": "Number of files to download simultaneously"
+  },
+
+  "enable-debug": {
+    "type": "switch",
+    "default": false,
+    "description": "Enable debug mode",
+    "tooltip": "Enable verbose debug logging"
+  },
+
+  "log-to-file": {
+    "type": "switch",
+    "default": false,
+    "description": "Log to file",
+    "tooltip": "Save logs to ~/.cinnamon/jottacloud.log"
+  },
+
+  "reset-settings": {
+    "type": "button",
+    "description": "Reset to defaults",
+    "callback": "resetSettings",
+    "tooltip": "Reset all settings to default values"
+  }
+}

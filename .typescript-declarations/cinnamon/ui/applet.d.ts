@@ -11,7 +11,7 @@ declare namespace imports.ui.applet {
 	 * #MenuItem
 	 * @short_description: Deprecated. Use #PopupMenu.PopupIconMenuItem instead.
 	 */
-	export class MenuItem extends ui.popupMenu.PopupIconMenuItem {
+	export class MenuItem extends imports.ui.popupMenu.PopupIconMenuItem {
 		constructor(label: string, icon: string, callback: (owner: MenuItem, event: gi.Clutter.Event, keepMenu: boolean) => void);
 	}
 

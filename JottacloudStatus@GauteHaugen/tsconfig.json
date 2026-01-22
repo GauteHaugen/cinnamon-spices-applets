@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "allowJs": true,
+    "checkJs": false,
+    "noEmit": true,
+    "typeRoots": [
+      "../.typescript-declarations/cinnamon",
+      "../.typescript-declarations/cinnamon/misc",
+      "../.typescript-declarations/cinnamon/ui",
+      "../.typescript-declarations/manual-overrides"
+    ]
+  },
+  "include": ["./**/*"]
+}

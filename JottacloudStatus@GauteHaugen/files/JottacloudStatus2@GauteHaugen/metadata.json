@@ -1,0 +1,14 @@
+{
+  "uuid": "JottacloudStatus@GauteHaugen",
+  "name": "Jottacloud Status",
+  "description": "Complete Jottacloud integration for Cinnamon - Monitor sync status, manage backups, and control your cloud storage directly from the panel",
+  "icon": "cloud",
+  "max-instances": "1",
+  "version": "2.0.0",
+  "author": "Gaute Haugen",
+  "website": "https://github.com/yourusername/cinnamon-jottacloud",
+  "cinnamon-version": ["4.0", "4.2", "4.4", "4.6", "4.8", "5.0", "5.2", "5.4", "5.6", "5.8", "6.0"],
+  "comments": "Requires jotta-cli to be installed and configured",
+  "contributors": [],
+  "last-edited": 1735680000
+}
