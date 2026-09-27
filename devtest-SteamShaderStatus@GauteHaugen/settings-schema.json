@@ -1,0 +1,61 @@
+{
+  "head": {
+    "type": "header",
+    "description": "Steam Shader Status Settings"
+  },
+
+  "section1": {
+    "type": "section",
+    "description": "Display"
+  },
+
+  "hide-when-idle": {
+    "type": "checkbox",
+    "default": false,
+    "description": "Hide the applet when no shaders are processing",
+    "tooltip": "When off, a dimmed icon stays in the panel so you can open the session history"
+  },
+
+  "stall-timeout": {
+    "type": "spinbutton",
+    "default": 60,
+    "min": 20,
+    "max": 600,
+    "step": 10,
+    "units": "seconds",
+    "description": "Show as stalled after no progress for"
+  },
+
+  "section2": {
+    "type": "section",
+    "description": "Notifications"
+  },
+
+  "notify": {
+    "type": "checkbox",
+    "default": false,
+    "description": "Notify when a game starts and finishes processing"
+  },
+
+  "section3": {
+    "type": "section",
+    "description": "Advanced"
+  },
+
+  "steam-root": {
+    "type": "entry",
+    "default": "~/.steam/steam",
+    "description": "Steam root directory"
+  },
+
+  "enable-debug": {
+    "type": "checkbox",
+    "default": false,
+    "description": "Enable debug logging (check with Alt+F2 → lg)"
+  },
+
+  "log-path-override": {
+    "type": "generic",
+    "default": ""
+  }
+}

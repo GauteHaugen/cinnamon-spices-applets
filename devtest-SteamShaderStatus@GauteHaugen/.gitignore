@@ -1,0 +1,4 @@
+# Local Steam logs may contain personal paths and library details; never commit them.
+dev/fixtures/
+*.txt
+*.log

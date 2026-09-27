@@ -1,0 +1,7 @@
+{
+    "uuid": "devtest-SteamShaderStatus@GauteHaugen",
+    "name": "Steam Shader Status",
+    "description": "Shows Steam's background shader pre-caching progress: game, percent and ETA",
+    "max-instances": "1",
+    "version": "1.0.0"
+}
