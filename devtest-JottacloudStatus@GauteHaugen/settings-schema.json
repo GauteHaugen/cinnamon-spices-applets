@@ -1,0 +1,88 @@
+{
+  "head": {
+    "type": "header",
+    "description": "Jottacloud Status Settings"
+  },
+
+  "section1": {
+    "type": "section",
+    "description": "Display"
+  },
+
+  "show-label": {
+    "type": "checkbox",
+    "default": true,
+    "description": "Show status text in panel"
+  },
+
+  "show-icon": {
+    "type": "checkbox",
+    "default": true,
+    "description": "Show icon in panel"
+  },
+
+  "update-interval": {
+    "type": "spinbutton",
+    "default": 10,
+    "min": 5,
+    "max": 300,
+    "step": 5,
+    "units": "seconds",
+    "description": "Status update interval"
+  },
+
+  "section2": {
+    "type": "section",
+    "description": "Popup Menu"
+  },
+
+  "show-transfers": {
+    "type": "checkbox",
+    "default": true,
+    "description": "Show active transfers section"
+  },
+
+  "show-recent-activity": {
+    "type": "checkbox",
+    "default": true,
+    "description": "Show recent sync activity"
+  },
+
+  "recent-activity-count": {
+    "type": "spinbutton",
+    "default": 5,
+    "min": 3,
+    "max": 20,
+    "step": 1,
+    "units": "entries",
+    "description": "Number of recent activity entries to show"
+  },
+
+  "section3": {
+    "type": "section",
+    "description": "Notifications"
+  },
+
+  "show-notifications": {
+    "type": "checkbox",
+    "default": true,
+    "description": "Show desktop notifications"
+  },
+
+  "notify-errors": {
+    "type": "checkbox",
+    "default": true,
+    "description": "Notify on errors"
+  },
+
+  "section4": {
+    "type": "section",
+    "description": "Advanced"
+  },
+
+  "enable-debug": {
+    "type": "checkbox",
+    "default": false,
+    "description": "Enable debug logging (check with Alt+F2 → lg)"
+  }
+}
